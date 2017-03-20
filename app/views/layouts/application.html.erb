@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Flashcards</title>
+  <title><%= yield(:title) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <div class="row">
+      <nav class="navbar navbar-default">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="#">Все карточки</a></li>
+            <li><a href="#">Добавить карточку</a></li>
+          </ul>
+      </nav>
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
+
