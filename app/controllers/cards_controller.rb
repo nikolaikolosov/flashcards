@@ -14,32 +14,25 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.new(card_params)
-
-    respond_to do |format|
-      if @card.save
-        format.html { redirect_to action: :index }
-      else
-        format.html { render :new }
-      end
+    if @card.save
+      redirect_to action: :index
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @card.update(card_params)
-        format.html { redirect_to cards_url }
-      else
-        format.html { render :edit }
-      end
+    if @card.update(card_params)
+      redirect_to cards_url
+    else
+      render :edit
     end
-end
+  end
 
   def destroy
     @card.destroy
-    respond_to do |format|
-      format.html { redirect_to cards_url }
-    end
-end
+    redirect_to cards_url
+  end
 
   private
 

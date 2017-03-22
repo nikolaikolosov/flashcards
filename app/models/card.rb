@@ -1,12 +1,12 @@
 class Card < ApplicationRecord
   validates :original_text, :translated_text, presence: true
   validate :different_text
-  before_validation :set_review_date_plus_three_days, on: :create
+  before_validation :set_review_date, on: :create
   
   private
 
-  def set_review_date_plus_three_days
-    self.review_date = Time.now + 3.days
+  def set_review_date
+    self.review_date = 3.days.from_now
   end
 
   def different_text
