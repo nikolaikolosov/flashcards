@@ -2,3 +2,19 @@
 <p style="font-size: 22px;">
   Первый в мире удобный менеджер флеш-карточек. Именно так.
 </p>
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end -%>
+
+<% if @card %>
+  <p>
+    <b>Слово на немецком:</b><br />
+    <%= @card.original_text %>
+  </p>
+
+  <%= render 'check_form', card: @card %>
+<% else %>
+  <p>
+    Вы выучили все доступные карточки. Приходите позже!
+  </p>
+<% end %>
