@@ -5,10 +5,9 @@ class PagesController < ApplicationController
 
   def check_card
     @card = Card.find(params[:card_id])
-    check_result = @card.check_answer(answer_params[:answer], answer_params[:translated_text])
+    check_result = @card.check_answer(answer_params[:answer])
     if check_result
-      @card.review_date = 3.days.from_now
-      @card.save
+      @card.update_review_date
     else
       flash[:notice] = 'Incorrect'
     end
@@ -16,8 +15,8 @@ class PagesController < ApplicationController
   end
 
   private
-  
+
   def answer_params
-    params.permit(:answer, :translated_text)
+    params.permit(:answer)
   end
 end

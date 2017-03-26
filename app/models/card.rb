@@ -5,10 +5,12 @@ class Card < ApplicationRecord
 
   scope :review, -> { where("review_date <= ?", Time.now).order('RANDOM()')  }
   
-  def check_answer(answer, translated_text)
-    if trim_downcase(answer) == trim_downcase(translated_text)
-      return true
-    end
+  def check_answer(answer)
+    trim_downcase(answer) == trim_downcase(self.translated_text)
+  end
+
+  def update_review_date
+    update(review_date: 3.days.from_now)
   end
 
   private
