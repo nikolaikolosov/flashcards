@@ -1,0 +1,10 @@
+<%= form_tag check_card_path(card_id: card.id), method: :put, remote: true do %>
+
+  <div class="form-group">
+    <%= label_tag '', "Введите перевод слова на английский" %>
+    <%= text_area_tag :answer, nil, class: 'form-control',
+                      required: true, autofocus: true %>
+  </div>
+
+  <%= submit_tag 'Проверить', class: 'btn btn-default' %>
+<% end %>
