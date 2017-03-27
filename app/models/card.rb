@@ -1,7 +1,7 @@
 class Card < ApplicationRecord
   validates :original_text, :translated_text, presence: true
   validate :different_text
-  before_validation :set_review_date, on: :create
+  before_validation :set_review_date_as_now, on: :create
 
   scope :review, -> { where("review_date <= ?", Time.now).order('RANDOM()')  }
   
@@ -15,8 +15,8 @@ class Card < ApplicationRecord
 
   private
 
-  def set_review_date
-    self.review_date = 3.days.from_now
+  def set_review_date_as_now
+    self.review_date = Time.now
   end
 
   def different_text
@@ -25,8 +25,7 @@ class Card < ApplicationRecord
     end
   end
 
-    def trim_downcase(str)
+  def trim_downcase(str)
     str.mb_chars.downcase.to_s.squeeze(' ').lstrip
   end
-
 end
