@@ -25,8 +25,7 @@ class Card < ApplicationRecord
     end
   end
 
-    def trim_downcase(str)
+  def trim_downcase(str)
     str.mb_chars.downcase.to_s.squeeze(' ').lstrip
   end
-
 end
