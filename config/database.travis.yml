@@ -1,4 +1,4 @@
 test:
   adapter: postgresql
-  database: flashcards_dev
-  username: user1
+  database: flashcards_test
+  username: postgres
