@@ -3,8 +3,8 @@ rvm:
   - 2.4.0
 before_script:
   - cp config/database.travis.yml config/database.yml
-  - psql -c 'create database myapp_test;' -U postgres
-  - rake db:migrate --trace
-  - rake db:test:prepare --trace
+  - psql -c 'create database flashcards_test;' -U user1
+  - bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare --trace
 script:
   - RAILS_ENV=test bundle exec rake spec
