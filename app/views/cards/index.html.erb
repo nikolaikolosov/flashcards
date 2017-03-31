@@ -7,6 +7,7 @@
   <tr>
     <th>Немецкое слово</th>
     <th>Перевод на английский</th>
+    <th>Пользователь</th>
     <th>Следующий просмотр</th>
     <th colspan="2"></th>
   </tr>
@@ -15,6 +16,7 @@
     <tr>
       <td><%= card.original_text %></td>
       <td><%= card.translated_text %></td>
+      <td><%= card.user.email %></td>
       <td><%= card.review_date.strftime("%d.%m.%Y") %></td>
       <td><%= link_to 'Редактировать', edit_card_path(card) %></td>
       <td><%= link_to 'Удалить', card, method: :delete,
