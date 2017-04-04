@@ -1,4 +1,4 @@
-def login(email, password)
+def login(email = 'test@test.ru', password = 'test')
   visit root_path
   click_link 'Вход'
   fill_in :email, with: email
