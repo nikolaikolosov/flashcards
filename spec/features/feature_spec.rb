@@ -7,7 +7,7 @@ describe 'Main page tests' do
     card = create(:card).update_attribute(:review_date, Time.now - 10.days)
     user = create(:user)
     visit root_path
-    login('test@test.ru', 'test')
+    correct_login
   end
 
   it 'not load page without check_form' do

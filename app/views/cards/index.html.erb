@@ -13,7 +13,7 @@
   </tr>
  
   <% @cards.each do |card| %>
-    <% if current_user.id == card.user.id %>
+    <% if current_user == card.user %>
       <tr>
         <td><%= card.original_text %></td>
         <td><%= card.translated_text %></td>

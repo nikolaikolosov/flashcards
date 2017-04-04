@@ -9,17 +9,17 @@ describe 'Login to site' do
   end
 
   it "doesn't opens main page after unsuccessful login" do
-    login("bob@mail.ru", "qweqweqwe")
+    incorrect_login
     expect(page).to have_content "Неудачная попытка входа"
   end
 
   it "opens main page after login" do
-    login("test@test.ru", "test")
+    correct_login
     expect(page).not_to have_content "Неудачная попытка входа"
   end
 
   it "make logout action" do
-    login("test@test.ru", "test")
+    correct_login
     click_link 'Выход'
     expect(page).to have_content "Вы успешно вышли"
   end
