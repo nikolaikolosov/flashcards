@@ -13,14 +13,16 @@
   </tr>
  
   <% @cards.each do |card| %>
-    <tr>
-      <td><%= card.original_text %></td>
-      <td><%= card.translated_text %></td>
-      <td><%= card.user.email %></td>
-      <td><%= card.review_date.strftime("%d.%m.%Y") %></td>
-      <td><%= link_to 'Редактировать', edit_card_path(card) %></td>
-      <td><%= link_to 'Удалить', card, method: :delete,
-                      data: { confirm: 'Удалить карточку?' } %></td>
-    </tr>
+    <% if current_user == card.user %>
+      <tr>
+        <td><%= card.original_text %></td>
+        <td><%= card.translated_text %></td>
+        <td><%= card.user.email %></td>
+        <td><%= card.review_date.strftime("%d.%m.%Y") %></td>
+        <td><%= link_to 'Редактировать', edit_card_path(card) %></td>
+        <td><%= link_to 'Удалить', card, method: :delete,
+                        data: { confirm: 'Удалить карточку?' } %></td>
+      </tr>
+    <% end %>
   <% end %>
 </table>
