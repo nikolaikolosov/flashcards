@@ -9,6 +9,11 @@
       <%= @card.original_text %>
     </p>
 
+  <% if @card.image? %>
+        <%= image_tag @card.image_url %>
+  <% end %>
+  <br />
+  <br />
     <%= render 'check_form', card: @card %>
   <% else %>
     <p>

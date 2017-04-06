@@ -34,4 +34,3 @@ describe 'Main page tests' do
     expect(page).not_to have_content 'Incorrect'
   end
 end
-
