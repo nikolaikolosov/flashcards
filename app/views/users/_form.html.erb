@@ -1,0 +1,19 @@
+<%= simple_form_for user do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.input :email, label: 'Адрес электронной почты',
+                input_html: { class: 'form-control' } %>
+  </div>
+
+  <div class="form-group">  
+    <%= f.input :password, label: 'Пароль', 
+                input_html: { class: 'form-control' } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :password_confirmation, label: 'Подтвердите пароль',
+                input_html: { class: 'form-control' }  %>
+  </div>
+    <%= f.button :submit, 'Сохранить', class: 'btn btn-default'  %>
+<% end %>
