@@ -1,10 +1,11 @@
 class Card < ApplicationRecord
   mount_uploader :image, ImageUploader
+  belongs_to :pack
   belongs_to :user
-  validates :original_text, :translated_text, presence: true
+  validates :original_text, :translated_text, :pack_id, presence: true
   validate :different_text
   before_validation :set_review_date, on: :create
-  scope :review, -> { where("review_date <= ?", Time.now).order('RANDOM()')  } #исправить user_id
+  scope :review, -> { where("review_date <= ?", Time.now).order('RANDOM()')  }
   
   def check_answer(answer)
     trim_downcase(answer) == trim_downcase(self.translated_text)

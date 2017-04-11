@@ -1,6 +1,6 @@
 <% content_for :title, "Флэшкарточкер" %>
 <p style="font-size: 22px;">
-  Первый в мире удобный менеджер флеш-карточек. Именно так.
+  Добро пожаловать в менеджер флеш-карточек
 </p>
 <% if current_user %>
   <% if @card %>
@@ -9,11 +9,9 @@
       <%= @card.original_text %>
     </p>
 
-  <% if @card.image? %>
-        <%= image_tag @card.image_url %>
-  <% end %>
-  <br />
-  <br />
+    <% if @card.image? %>
+          <%= image_tag @card.image_url %>
+    <% end %>
     <%= render 'check_form', card: @card %>
   <% else %>
     <p>

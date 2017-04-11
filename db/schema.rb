@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170407192738) do
+ActiveRecord::Schema.define(version: 20170413050417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,8 +30,16 @@ ActiveRecord::Schema.define(version: 20170407192738) do
     t.datetime "review_date"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "user_id"
     t.string   "image"
+    t.integer  "pack_id"
+    t.integer  "user_id"
+  end
+
+  create_table "packs", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,6 +48,7 @@ ActiveRecord::Schema.define(version: 20170407192738) do
     t.string   "salt"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "current_pack_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 

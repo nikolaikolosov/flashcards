@@ -1,7 +1,18 @@
 class PagesController < ApplicationController
+
   def index
-    @card = Card.review.first
+    if current_user == nil
+    elsif params[:id]
+      @card = current_user.cards.find(params[:id])
+    else
+      if current_user.current_pack
+        @card = current_user.current_pack.cards.review.first
+      else
+        @card = current_user.cards.review.first
+      end
+    end
   end
+
 
   def check_card
     @card = Card.find(params[:card_id])

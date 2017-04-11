@@ -15,7 +15,7 @@ def parser (url)
     original = row.search('td[2]')[0].content.to_s
     translated = row.search('td[3]')[0].content.to_s
     if original != 'German word ' && translated != 'English translation' && translated != ''
-      Card.create(original_text: original, translated_text: translated)
+      Card.create(original_text: original, translated_text: translated, pack_id: 1, user_id: 1)
     end
   end
 end

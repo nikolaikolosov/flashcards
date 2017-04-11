@@ -8,6 +8,12 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'pages#index'
+  resources :packs do
+    member do
+      put 'set_as_current'
+      put 'reset_as_current'
+    end
+  end
   resources :cards
   put 'check_card' => 'pages#check_card'
   # Example of regular route:
