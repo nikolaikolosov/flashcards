@@ -12,6 +12,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simple_form'
 gem 'nokogiri'
 gem 'sorcery'
+gem 'carrierwave'
+gem "mini_magick"
 
 group :development, :test do
   gem 'byebug'

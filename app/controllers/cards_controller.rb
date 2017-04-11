@@ -2,7 +2,7 @@ class CardsController < ApplicationController
   before_action :set_card, only: [:edit, :update, :destroy]
 
   def index
-    @cards = Card.all.order id: :asc
+    @cards = current_user.cards.order id: :asc
   end
 
   def new
@@ -15,7 +15,7 @@ class CardsController < ApplicationController
   def create
     @card = current_user.cards.build(card_params)
     if @card.save
-      redirect_to action: :index
+      redirect_to cards_path
     else
       render :new
     end
@@ -41,6 +41,6 @@ class CardsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:original_text, :translated_text)
+    params.require(:card).permit(:original_text, :translated_text, :image)
   end
 end
