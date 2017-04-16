@@ -1,0 +1,8 @@
+<%= simple_form_for pack do |f| %>
+  <div class="form-group">
+    <%= f.input :title, label: 'Название колоды',
+                input_html: { class: 'form-control' } %>
+  </div>
+
+  <%= f.button :submit, 'Сохранить', class: 'btn btn-default' %>
+<% end %>

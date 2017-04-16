@@ -1,0 +1,33 @@
+<% content_for :title, "Список колод" %>
+<p style="font-size: 22px;">
+Список колод
+</p>
+
+<table class="table table-striped">
+  <tr>
+    <th>Название колоды</th>
+    <th>Автор</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @packs.each do |pack| %>
+      <tr>
+        <td><%= pack.title %></td>
+        <% if pack.current? %>
+          <td>
+            <%= link_to 'Сделать неактивной', reset_as_current_pack_path(pack),
+                        method: :put %>
+          </td>
+        <% else %>
+          <td>
+            <%= link_to 'Сделать активной', set_as_current_pack_path(pack),
+                        method: :put %>
+          </td>
+        <% end %>
+        <td><%= pack.user.email %></td>
+        <td><%= link_to 'Редактировать', edit_pack_path(pack) %></td>
+        <td><%= link_to 'Удалить', pack, method: :delete,
+                        data: { confirm: 'Удалить колоду? Внимание! Все карточки в этой колоде так же будут удалены!' } %></td>
+      </tr>
+  <% end %>
+</table>

@@ -1,7 +1,14 @@
 class PagesController < ApplicationController
+before_action :check_user
+
   def index
-    @card = Card.review.first
+      @card = if current_user.current_pack
+                current_user.current_pack.cards.review.first
+              else
+                current_user.cards.review.first
+              end
   end
+
 
   def check_card
     @card = Card.find(params[:card_id])
@@ -15,6 +22,10 @@ class PagesController < ApplicationController
   end
 
   private
+
+  def check_user
+    redirect_to login_path unless current_user
+  end
 
   def answer_params
     params.permit(:answer)
