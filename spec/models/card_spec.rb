@@ -6,7 +6,7 @@ RSpec.describe Card, type: :model do
     let(:card) { create :card }
 
     it 'get correct review date on create' do
-      expect(card.review_date.to_date).to eq(3.days.from_now.to_date)
+      expect(card.review_date.to_date).to eq(-1.day.from_now.to_date)
     end
 
     it 'get incorrect review date on create' do

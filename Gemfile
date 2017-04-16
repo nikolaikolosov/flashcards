@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.4.0'
+
 gem 'rails'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
@@ -13,7 +15,7 @@ gem 'simple_form'
 gem 'nokogiri'
 gem 'sorcery'
 gem 'carrierwave'
-gem "mini_magick"
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug'
@@ -26,4 +28,5 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
 
