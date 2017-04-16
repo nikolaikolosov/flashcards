@@ -12,10 +12,6 @@ describe 'Add pack page tests' do
   it 'save pack' do
     fill_in 'pack_title', with: 'test'
     click_button 'Сохранить'
-    expect(page).to have_content 'Список колод'
     expect(page).to have_content 'test'
-    expect(page).to have_content 'Сделать активной'
-    expect(page).to have_content 'Редактировать'
-    expect(page).to have_content 'Удалить'
   end
 end

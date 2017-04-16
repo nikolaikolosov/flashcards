@@ -17,13 +17,11 @@ describe 'Add pack page tests' do
 
   it 'edit pack' do
     click_link 'Редактировать'
-    expect(page).to have_content 'Редактирование колоды'
     expect(page).to have_content 'Название колоды'
   end
 
   it 'delete pack' do
     click_link 'Удалить'
-    expect(page).not_to have_content 'Сделать активной'
     expect(page).not_to have_content 'Удалить'
   end
 
@@ -34,13 +32,11 @@ describe 'Add pack page tests' do
 
     it 'make pack active' do
       expect(page).to have_content 'Сделать неактивной'
-      expect(page).not_to have_content 'Сделать активной'
     end
 
     it 'make pack inactive' do
       click_link 'Сделать неактивной'
       expect(page).to have_content 'Сделать активной'
-      expect(page).not_to have_content 'Сделать неактивной'
     end
   end
 

@@ -3,27 +3,20 @@ require 'support/factory_girl'
 require 'support/login_helper'
 
 describe 'Main page tests for guest' do
-  #that group fo tests show that main page is avaliable and doesn't contain errors
+  #that group of tests show that main page is avaliable and doesn't contain errors
   before(:each) do
     visit root_path
   end
 
   it 'load page' do
-    expect(page).to have_content 'Добро пожаловать в менеджер флеш-карточек'
+    expect(page).to have_content 'Авторизация на сайте'
   end
 
   it 'load guest menu' do
-    expect(page).to have_content 'Главная'
     expect(page).to have_content 'Регистрация'
-    expect(page).to have_content 'Вход'
   end
 
   it 'not load user menu' do
-    expect(page).not_to have_content 'Мои колоды'
-    expect(page).not_to have_content 'Добавить колоду'
-    expect(page).not_to have_content 'Мои карточки'
-    expect(page).not_to have_content 'Добавить карточку'
-    expect(page).not_to have_content 'Редактировать профиль'
     expect(page).not_to have_content 'Выход'
   end
 end

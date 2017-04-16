@@ -13,7 +13,8 @@ gem 'simple_form'
 gem 'nokogiri'
 gem 'sorcery'
 gem 'carrierwave'
-gem "mini_magick"
+gem 'mini_magick'
+gem 'bundler'
 
 group :development, :test do
   gem 'byebug'
