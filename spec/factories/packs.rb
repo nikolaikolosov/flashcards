@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :pack do
-    id 1
     title 'Pack'
     user
 
