@@ -18,7 +18,8 @@ class Card < ApplicationRecord
   private
 
   def set_review_date
-    self.review_date = 3.days.from_now
+    #self.review_date = 3.days.from_now
+    self.review_date = -1.day.from_now
   end
 
   def different_text
