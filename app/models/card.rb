@@ -11,15 +11,26 @@ class Card < ApplicationRecord
     trim_downcase(answer) == trim_downcase(self.translated_text)
   end
 
-  def update_review_date
-    update(review_date: 3.days.from_now)
+  def successful
+    increment(:level, 1)
+    h = { 2 => 12.hours, 3 => 3.days, 4 => 7.days, 5 => 14.days, 6 => 1.month }
+    h.default_proc = proc{ |lvl, time| lvl[time] = 1.month }
+    update(updated_at: Time.now, review_date: h[level].from_now)
+  end
+
+  def failed
+    increment(:mistake, 1)
+    if mistake == 3
+      update(level: 2, mistake: 0)
+    else
+      update(updated_at: Time.now)
+    end
   end
 
   private
 
   def set_review_date
-    #self.review_date = 3.days.from_now
-    self.review_date = -1.day.from_now
+    self.review_date = Time.now
   end
 
   def different_text

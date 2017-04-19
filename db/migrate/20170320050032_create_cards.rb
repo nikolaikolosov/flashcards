@@ -7,6 +7,8 @@ class CreateCards < ActiveRecord::Migration[5.0]
       t.integer :user_id
       t.string :image
       t.integer :pack_id
+      t.integer :level, null: false, default: 1
+      t.integer :mistake
 
       t.timestamps
     end

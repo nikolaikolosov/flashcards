@@ -14,8 +14,9 @@ before_action :check_user
     @card = Card.find(params[:card_id])
     check_result = @card.check_answer(answer_params[:answer])
     if check_result
-      @card.update_review_date
+      @card.successful
     else
+      @card.failed
       flash[:notice] = 'Incorrect'
     end
     redirect_to root_path
