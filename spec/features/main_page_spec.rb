@@ -60,12 +60,12 @@ describe 'Main page tests when user has pack and card' do
   it 'entered incorrect translation' do
     fill_in 'answer', with: 'village'
     click_button 'Проверить'
-    expect(page).to have_content 'Incorrect'
+    expect(page).to have_content 'Неверно'
   end
 
   it 'entered correct translation' do
     fill_in 'answer', with: 'city'
     click_button 'Проверить'
-    expect(page).not_to have_content 'Incorrect'
+    expect(page).not_to have_content 'Неверно'
   end
 end
