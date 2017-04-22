@@ -7,14 +7,15 @@ class Card < ApplicationRecord
   before_validation :set_review_date, on: :create
   scope :review, -> { where("review_date <= ?", Time.now).order('RANDOM()')  }
   
+  #this method returns Levenshtein distance between user answer and translated text
   def check_answer(answer)
-    trim_downcase(answer) == trim_downcase(self.translated_text)
+    Levenshtein.distance(trim_downcase(answer), trim_downcase(self.translated_text))
   end
 
   def successful
     increment(:level, 1)
     h = { 2 => 12.hours, 3 => 3.days, 4 => 7.days, 5 => 14.days, 6 => 1.month }
-    h.default_proc = proc{ |lvl, time| lvl[time] = 1.month }
+    h.default_proc = proc { |lvl, time| lvl[time] = 1.month }
     update(updated_at: Time.now, review_date: h[level].from_now)
   end
 

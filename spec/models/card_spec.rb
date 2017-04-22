@@ -13,14 +13,19 @@ RSpec.describe Card, type: :model do
       expect(card.review_date.to_date).not_to eq(-1.day.from_now.to_date)
     end
 
-    it 'test check_answer method as true' do
+    it 'test check_answer method return 0' do
       check_result = card.check_answer('city')
-      expect(check_result).to be true
+      expect(check_result).to be 0
+    end
+
+    it 'test check_answer method return 1' do
+      check_result = card.check_answer('cyty')
+      expect(check_result).to be 1
     end
 
     it 'test check_answer method as false' do
       check_result = card.check_answer('village')
-      expect(check_result).to be false
+      expect(check_result).to be 6
     end
 
     it 'increase mistake by 1' do
