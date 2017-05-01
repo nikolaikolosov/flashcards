@@ -16,4 +16,15 @@ class User < ApplicationRecord
   def make_inactive
     update_attribute(:current_pack_id, nil)
   end
+
+
+  scope :cards_for_review, -> { joins(:cards).where('review_date <= ?', Time.now) }
+
+  def self.cards_notification_email
+    cards_for_review.each do |user|
+      NotificationsMailer.pending_cards_notification(user).deliver_now
+    end
+  end
+
+
 end

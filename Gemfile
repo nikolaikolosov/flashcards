@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.4.0'
 
 gem 'pg'
-gem 'rails'
+gem 'rails', '~> 5.0.2'
 gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'uglifier', '>= 1.3.0'
@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'carrierwave'
 gem 'sorcery'
 gem 'levenshtein'
+gem 'whenever', require: false
 gem 'mini_magick'
 
 group :development, :test do
