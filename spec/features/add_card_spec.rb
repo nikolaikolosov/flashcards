@@ -16,7 +16,7 @@ describe 'Add card page tests' do
     click_button 'Сохранить'
     expect(page).to have_content 'Flughafen'
     expect(page).to have_content 'Airport'
-    expect(page).to have_content 'No image'
+    expect(page).to have_content 'Нет изображения'
   end
 
   it 'save card with image' do

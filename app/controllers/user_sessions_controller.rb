@@ -7,13 +7,13 @@ class UserSessionsController < ApplicationController
     if @user = login(params[:email], params[:password])
       redirect_to root_path
     else
-      flash.now[:alert] = 'Неудачная попытка входа'
+      flash.now[:alert] = t('controllers.login_unsuccessful')
       render action: 'new'
     end
   end
 
   def destroy
     logout
-    redirect_to root_path, notice: 'Вы успешно вышли'
+    redirect_to root_path, notice: t('controllers.logout_successful')
   end
 end

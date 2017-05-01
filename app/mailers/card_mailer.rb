@@ -3,7 +3,7 @@ class CardMailer < ApplicationMailer
  
   def pending_cards_notification(user)
     if user.email
-      mail to: user.email, subject: 'Пришло время повторить карточки'
+      mail to: user.email, subject: t('mailers.subject')
     end
   end
 end

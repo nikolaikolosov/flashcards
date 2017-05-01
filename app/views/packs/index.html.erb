@@ -1,12 +1,12 @@
-<% content_for :title, "Список колод" %>
+<% content_for :title, t('.title') %>
 <p style="font-size: 22px;">
-Список колод
+<%= t('.title') %>
 </p>
 
 <table class="table table-striped">
   <tr>
-    <th>Название колоды</th>
-    <th>Автор</th>
+    <th><%= t('shared.pack_name') %></th>
+    <th><%= t('.author') %></th>
     <th colspan="3"></th>
   </tr>
  
@@ -15,19 +15,19 @@
         <td><%= pack.title %></td>
         <% if pack.current? %>
           <td>
-            <%= link_to 'Сделать неактивной', reset_as_current_pack_path(pack),
+            <%= link_to t('.make_inactive'), reset_as_current_pack_path(pack),
                         method: :put %>
           </td>
         <% else %>
           <td>
-            <%= link_to 'Сделать активной', set_as_current_pack_path(pack),
+            <%= link_to t('.make_active'), set_as_current_pack_path(pack),
                         method: :put %>
           </td>
         <% end %>
         <td><%= pack.user.email %></td>
-        <td><%= link_to 'Редактировать', edit_pack_path(pack) %></td>
-        <td><%= link_to 'Удалить', pack, method: :delete,
-                        data: { confirm: 'Удалить колоду? Внимание! Все карточки в этой колоде так же будут удалены!' } %></td>
+        <td><%= link_to t('shared.edit'), edit_pack_path(pack) %></td>
+        <td><%= link_to t('shared.delete'), pack, method: :delete,
+                        data: { confirm: t('.delete_pack') } %></td>
       </tr>
   <% end %>
 </table>

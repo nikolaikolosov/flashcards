@@ -37,6 +37,6 @@ describe 'register new user' do
     fill_in 'user_password_confirmation', with: 'password'
     click_button 'Сохранить'
 
-    expect(page).to have_content 'Login successfull'
+    expect(page).to have_content 'Вход выполнен'
   end
 end

@@ -1,23 +1,23 @@
 <%= simple_form_for card do |f| %>
   <div class="form-group">
-    <%= f.input :original_text, label: 'Немецкое слово',
+    <%= f.input :original_text, label: t('shared.german_word'),
                 input_html: { class: 'form-control' } %>
   </div>
 
   <div class="form-group">
-    <%= f.input :translated_text, label: 'Перевод на английский',
+    <%= f.input :translated_text, label: t('shared.english_translation'),
                 input_html: { class: 'form-control' } %>
   </div>
 
   <div class="form-group">
-    <%= f.input :image, as: :file, label: 'Изображение' %>
+    <%= f.input :image, as: :file, label: t('shared.image') %>
   </div>
 
   <div class="form-group">
     <%= f.input :pack_id, collection: current_user.packs.all.order('title'),
-                      prompt: 'Выберите колоду', label: 'Колоды',
+                      prompt: t('.select_pack'), label: t('.pack'),
                       input_html: { class: 'form-control', required: true } %>
   </div>
 
-  <%= f.button :submit, 'Сохранить', class: 'btn btn-default' %>
+  <%= f.button :submit, t('shared.save'), class: 'btn btn-default' %>
 <% end %>

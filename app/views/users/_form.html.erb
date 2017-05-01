@@ -2,18 +2,23 @@
   <%= f.error_notification %>
 
   <div class="form-group">
-    <%= f.input :email, label: 'Адрес электронной почты',
+    <%= f.input :email, label: t('shared.email'),
                 input_html: { class: 'form-control' } %>
   </div>
 
   <div class="form-group">  
-    <%= f.input :password, label: 'Пароль', 
+    <%= f.input :password, label: t('shared.password'), 
                 input_html: { class: 'form-control' } %>
   </div>
 
   <div class="form-group">
-    <%= f.input :password_confirmation, label: 'Подтвердите пароль',
+    <%= f.input :password_confirmation, label: t('.password_confirmation'),
                 input_html: { class: 'form-control' }  %>
   </div>
-    <%= f.button :submit, 'Сохранить', class: 'btn btn-default'  %>
+
+  <div class="form-group">
+    <%= f.input :locale, collection: %w[en ru], label: t('.select_language'), input_html: { class: 'form-control' } %>
+  </div>
+
+    <%= f.button :submit, t('shared.save'), class: 'btn btn-default'  %>
 <% end %>

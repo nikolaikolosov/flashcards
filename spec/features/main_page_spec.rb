@@ -54,7 +54,7 @@ describe 'Main page tests when user has pack and card' do
   end
 
   it 'user can see card form' do
-    expect(page).to have_content 'Слово на немецком:'
+    expect(page).to have_content 'Немецкое слово'
   end
 
   it 'entered incorrect translation' do
