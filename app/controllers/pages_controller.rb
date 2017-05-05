@@ -16,10 +16,10 @@ class PagesController < ApplicationController
       @card.successful
     elsif check_result == 1
       @card.successful
-      flash[:notice] = "Верно, но с опечаткой. Вы ввели #{answer_params[:answer]}, правильное написание #{@card.translated_text}"
+      flash[:notice] = "#{t('controllers.mistake')} #{answer_params[:answer]}, #{t('controllers.correct_writing')} #{@card.translated_text}"
     else
       @card.failed
-      flash[:notice] = 'Неверно'
+      flash[:notice] = t('controllers.incorrect')
     end
     redirect_to root_path
   end

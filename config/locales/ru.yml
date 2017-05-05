@@ -1,0 +1,91 @@
+ru:
+  shared:
+    edit: Редактировать
+    email: Электронная почта
+    english_translation: Перевод на английский
+    enter: Вход
+    delete: Удалить
+    german_word: Немецкое слово
+    image: Изображение
+    pack_name: Название колоды
+    password: Пароль
+    save: Сохранить
+  controllers:
+    incorrect: Неверно
+    mistake: Верно, но с опечаткой. Вы ввели
+    correct_writing: правильное написание
+    login_unsuccessful: Неудачная попытка входа
+    login_successful: Вход выполнен
+    update_succsessful: Данные пользователя обновлены
+    delete_successful: Пользователь удалён
+    logout_successful: Вы успешно вышли
+  mailers:
+    subject: Пришло время повторить карточки
+  models:
+    different_values: Вводимые значения должны отличаться
+  card_mailer:
+    pending_cards_notification:
+      hello: Здравствуйте!
+      message: У некоторых из Ваших карточек наступила дата пересмотра. Пожалуйста, зайдите на флэшкарточкер и обновите карточки.
+  cards:
+    form:
+      select_pack: Выберите колоду
+      pack: Колода
+    edit:
+      title: Редактирование карточки
+    index:
+      title: Список карточек
+      user: Пользователь
+      next_review: Следующий просмотр
+      no_image: Нет изображения
+      delete_card: Удалить карточку?
+    new:
+      title: Новая карточка
+  layouts:
+    application:
+      main: Главная
+      my_packs: Мои колоды
+      add_pack: Добавить колоду
+      my_cards: Мои карточки
+      add_card: Добавить карточку
+      edit_profile: Редактировать профиль
+      exit: Выход
+      register: Регистрация
+  packs:
+    edit:
+      title: Редактирование колоды
+    index:
+      title: Список колод
+      author: Автор
+      make_inactive: Сделать неактивной
+      make_active: Сделать активной
+      delete_pack: Удалить колоду? Внимание! Все карточки в этой колоде так же будут удалены!
+    new:
+      title: Новая колода
+  pages:
+    check_form:
+      enter_translation: Введите перевод слова на английский
+      check: Проверить
+    index:
+      title: Флэшкарточкер
+      welcome: Добро пожаловать в менеджер флеш-карточек
+      no_cards: Вы выучили все доступные карточки. Приходите позже!
+      sign_in: Пожалуйста, войдите или зарегистрируйтесь, чтобы продолжить
+  user_sessions:
+    new:
+      title: Авторизация на сайте
+  users:
+    form:
+      password_confirmation: Подтвердите пароль
+      select_language: Выберите язык
+    edit:
+      title: Редактирование профиля
+    index:
+      users: Пользователи
+      show: Показать
+      user_destroy: Вы уверены?
+      new_user: Новый пользователь
+    show:
+      crypted_password: Зашифрованный пароль
+      salt: Соль
+      back: Назад

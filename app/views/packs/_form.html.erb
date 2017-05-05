@@ -1,8 +1,8 @@
 <%= simple_form_for pack do |f| %>
   <div class="form-group">
-    <%= f.input :title, label: 'Название колоды',
+    <%= f.input :title, label: t('shared.pack_name'),
                 input_html: { class: 'form-control' } %>
   </div>
 
-  <%= f.button :submit, 'Сохранить', class: 'btn btn-default' %>
+  <%= f.button :submit, t('shared.save'), class: 'btn btn-default' %>
 <% end %>

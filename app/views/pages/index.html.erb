@@ -1,11 +1,11 @@
-<% content_for :title, "Флэшкарточкер" %>
+<% content_for :title, t('.title') %>
 <p style="font-size: 22px;">
-  Добро пожаловать в менеджер флеш-карточек
+<%= t('.welcome') %>
 </p>
 <% if current_user %>
   <% if @card %>
     <p>
-      <b>Слово на немецком:</b><br />
+      <b><%= t('shared.german_word') %></b><br />
       <%= @card.original_text %>
     </p>
 
@@ -15,9 +15,8 @@
     <%= render 'check_form', card: @card %>
   <% else %>
     <p>
-      Вы выучили все доступные карточки. Приходите позже!
-    </p>
+      <%= t('.no_cards') %>
   <% end %>
 <% else %>
-Пожалуйста, войдите или зарегистрируйтесь, чтобы продолжить
+  <%= t('.sign_in') %>
 <% end %>

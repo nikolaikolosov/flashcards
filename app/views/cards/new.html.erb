@@ -1,6 +1,6 @@
-<% content_for :title, "Новая карточка" %>
+<% content_for :title, t('.title') %>
 <p style="font-size: 22px;">
-Новая карточка
+<%= t('.title') %>
 </p>
 
 <%= render 'form', card: @card %>

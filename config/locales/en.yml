@@ -1,23 +1,91 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  shared:
+    edit: Edit
+    email: E-mail
+    english_translation: English translation
+    enter: Enter
+    delete: Delete
+    german_word: German word
+    image: Image
+    pack_name: Pack name
+    password: Password
+    save: Save
+  controllers:
+    incorrect: Incorrect
+    mistake: Right, but with mistake. You entered
+    correct_writing: correct writing
+    login_unsuccessful: Login unsuccessful
+    login_successful: Login successful
+    update_succsessful: User was successfully updated
+    delete_successful: User was successfully deleted
+    logout_successful: Logout successful
+  mailers:
+    subject: Time to refresh the cards
+  models:
+    different_values: Entered values must be different
+  card_mailer:
+    pending_cards_notification:
+      hello: Hello!
+      message: Few of your cards reached review date. Please visit flashcards and refresh your cards.
+  cards:
+    form:
+      select_pack: Select pack
+      pack: Packs
+    edit:
+      title: Edit card
+    index:
+      title: List of cards
+      user: User
+      next_review: Next review
+      no_image: No image
+      delete_card: Delete card?
+    new:
+      title: New card
+  layouts:
+    application:
+      main: Main
+      my_packs: My packs
+      add_pack: Add pack
+      my_cards: My cards
+      add_card: Add card
+      edit_profile: Edit profile
+      exit: Exit
+      register: Register
+  packs:
+    edit:
+      title: Edit pack
+    index:
+      title: Pack list
+      author: Author
+      make_inactive: Make inactive
+      make_active: Make active
+      delete_pack: Delete pack? Attention! All cards in that pack also will be deleted!
+    new:
+      title: New pack
+  pages:
+    check_form:
+      enter_translation: Enter english translation
+      check: Check
+    index:
+      title: Flashcards
+      welcome: Welcome to flashcards manager
+      no_cards: You learned all avaliable cards. Return later!
+      sign_in: Please, enter or sign in to continue
+  user_sessions:
+    new:
+      title: Authorization
+  users:
+    form:
+      password_confirmation: Password confirmation
+      select_language: Select language
+    edit:
+      title: Edit profile
+    index:
+      users: Users
+      show: Show
+      user_destroy: Are you sure?
+      new_user: New user
+    show:
+      crypted_password: Crypted password
+      salt: Salt
+      back: Back

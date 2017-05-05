@@ -1,14 +1,14 @@
-<% content_for :title, "Список карточек" %>
+<% content_for :title, t('.title') %>
 <p style="font-size: 22px;">
-Список карточек
+<%= t('.title') %>
 </p>
 <table class="table table-striped">
   <tr>
-    <th>Немецкое слово</th>
-    <th>Перевод на английский</th>
-    <th>Пользователь</th>
-    <th>Следующий просмотр</th>
-    <th>Изображение</th>
+    <th><%= t('shared.german_word') %></th>
+    <th><%= t('shared.english_translation') %></th>
+    <th><%= t('.user') %></th>
+    <th><%= t('.next_review') %></th>
+    <th><%= t('shared.image') %></th>
     <th colspan="2"></th>
   </tr>
  
@@ -21,11 +21,11 @@
         <% if card.image? %>
           <td><%= image_tag card.image_url, size: "30" %></td>
         <% else %>
-          <td>No image</td>
+          <td><%= t('.no_image') %></td>
         <% end %>
-        <td><%= link_to 'Редактировать', edit_card_path(card) %></td>
-        <td><%= link_to 'Удалить', card, method: :delete,
-                        data: { confirm: 'Удалить карточку?' } %></td>
+        <td><%= link_to t('shared.edit'), edit_card_path(card) %></td>
+        <td><%= link_to t('shared.delete'), card, method: :delete,
+                        data: { confirm: t('.delete_card') } %></td>
       </tr>
   <% end %>
 </table>

@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to root_path, notice: 'Login successfull'
+      redirect_to root_path, notice: t('controllers.login_successful')
     else
       render :new
     end
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   def update
       if @user.update(user_params)
-        redirect_to root_path, notice: 'User was successfully updated.'
+        redirect_to root_path, notice: t('controllers.update_succsessful')
       else
         render :edit
       end
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-      redirect_to users_url, notice: 'User was successfully destroyed.'
+      redirect_to users_url, notice: t('controllers.delete_successful')
   end
 
   private
@@ -46,6 +46,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation, :locale)
   end
 end

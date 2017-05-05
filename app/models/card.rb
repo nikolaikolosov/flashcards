@@ -36,7 +36,7 @@ class Card < ApplicationRecord
 
   def different_text
     if trim_downcase(original_text) == trim_downcase(translated_text)
-      errors.add(:original_text, 'Вводимые значения должны отличаться.')
+      errors.add(:original_text, t('models.different_values'))
     end
   end
 
