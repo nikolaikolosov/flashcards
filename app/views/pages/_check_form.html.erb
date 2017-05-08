@@ -4,6 +4,7 @@
     <%= label_tag '', t('.enter_translation') %>
     <%= text_area_tag :answer, nil, class: 'form-control',
                       required: true, autofocus: true %>
+    <%= hidden_field_tag 'time', params[:time], value: 0 %>
   </div>
 
   <%= submit_tag t('.check'), class: 'btn btn-default' %>

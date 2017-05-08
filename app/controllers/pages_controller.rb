@@ -13,12 +13,12 @@ class PagesController < ApplicationController
     @card = Card.find(params[:card_id])
     check_result = @card.check_answer(answer_params[:answer])
     if check_result.zero?
-      @card.successful
+      SuperMemo.new(@card).successful(params[:time].to_i)
     elsif check_result == 1
-      @card.successful
+      SuperMemo.new(@card).successful(params[:time].to_i)
       flash[:notice] = "#{t('controllers.mistake')} #{answer_params[:answer]}, #{t('controllers.correct_writing')} #{@card.translated_text}"
     else
-      @card.failed
+      SuperMemo.new(@card).failed
       flash[:notice] = t('controllers.incorrect')
     end
     redirect_to root_path
