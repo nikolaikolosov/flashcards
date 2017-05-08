@@ -17,3 +17,6 @@
 /tmp
 /public/images/
 /public/uploads/tmp
+/config/secrets.yml
+# Ignore application configuration
+/config/application.yml
