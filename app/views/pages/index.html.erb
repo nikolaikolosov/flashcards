@@ -3,20 +3,15 @@
 <%= t('.welcome') %>
 </p>
 <% if current_user %>
-  <% if @card %>
-    <p>
-      <b><%= t('shared.german_word') %></b><br />
-      <%= @card.original_text %>
-    </p>
-
-    <% if @card.image? %>
-          <%= image_tag @card.image_url %>
-    <% end %>
-    <%= render 'check_form', card: @card %>
-  <% else %>
-    <p>
-      <%= t('.no_cards') %>
-  <% end %>
+    <div id="card_and_check">
+      <% if @card %>
+          <%= render 'check_form', card: @card %>
+      <% else %>
+        <p>
+          <%= t('.no_cards') %>
+        
+      <% end %>
+    </div>
 <% else %>
   <%= t('.sign_in') %>
 <% end %>
