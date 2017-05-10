@@ -7,6 +7,10 @@ class PagesController < ApplicationController
             else
               current_user.cards.review.first
             end
+    respond_to do |format|
+      format.html { flash.keep }
+      format.js
+    end
   end
 
   def check_card
