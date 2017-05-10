@@ -19,6 +19,8 @@ gem 'levenshtein'
 gem 'whenever', require: false
 gem 'http_accept_language'
 gem 'mini_magick'
+gem 'rollbar'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'
@@ -31,5 +33,5 @@ end
 
 group :development do
   gem 'spring'
-  gem 'web-console', '~> 2.0'
+  #gem 'web-console', '~> 2.0'
 end
