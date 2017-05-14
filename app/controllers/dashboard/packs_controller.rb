@@ -1,4 +1,4 @@
-class PacksController < ApplicationController
+class Dashboard::PacksController < ApplicationController
   before_action :set_pack, only: [:edit, :update, :destroy, :set_as_current, :reset_as_current]
 
   def index

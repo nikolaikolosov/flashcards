@@ -27,20 +27,6 @@ en:
     pending_cards_notification:
       hello: Hello!
       message: Few of your cards reached review date. Please visit flashcards and refresh your cards.
-  cards:
-    form:
-      select_pack: Select pack
-      pack: Packs
-    edit:
-      title: Edit card
-    index:
-      title: List of cards
-      user: User
-      next_review: Next review
-      no_image: No image
-      delete_card: Delete card?
-    new:
-      title: New card
   layouts:
     application:
       main: Main
@@ -51,41 +37,57 @@ en:
       edit_profile: Edit profile
       exit: Exit
       register: Register
-  packs:
-    edit:
-      title: Edit pack
-    index:
-      title: Pack list
-      author: Author
-      make_inactive: Make inactive
-      make_active: Make active
-      delete_pack: Delete pack? Attention! All cards in that pack also will be deleted!
-    new:
-      title: New pack
-  pages:
-    check_form:
-      enter_translation: Enter english translation
-      check: Check
-    index:
-      title: Flashcards
-      welcome: Welcome to flashcards manager
-      no_cards: You learned all avaliable cards. Return later!
-      sign_in: Please, enter or sign in to continue
-  user_sessions:
-    new:
-      title: Authorization
-  users:
-    form:
-      password_confirmation: Password confirmation
-      select_language: Select language
-    edit:
-      title: Edit profile
-    index:
-      users: Users
-      show: Show
-      user_destroy: Are you sure?
-      new_user: New user
-    show:
-      crypted_password: Crypted password
-      salt: Salt
-      back: Back
+  dashboard:
+    cards:
+      form:
+        select_pack: Select pack
+        pack: Packs
+      edit:
+        title: Edit card
+      index:
+        title: List of cards
+        user: User
+        next_review: Next review
+        no_image: No image
+        delete_card: Delete card?
+      new:
+        title: New card
+    packs:
+      edit:
+        title: Edit pack
+      index:
+        title: Pack list
+        author: Author
+        make_inactive: Make inactive
+        make_active: Make active
+        delete_pack: Delete pack? Attention! All cards in that pack also will be deleted!
+      new:
+        title: New pack
+    pages:
+      check_form:
+        enter_translation: Enter english translation
+        check: Check
+      index:
+        title: Flashcards
+        welcome: Welcome to flashcards manager
+        no_cards: You learned all avaliable cards. Return later!
+        sign_in: Please, enter or sign in to continue
+  home:
+    user_sessions:
+      new:
+        title: Authorization
+    users:
+      form:
+        password_confirmation: Password confirmation
+        select_language: Select language
+      edit:
+        title: Edit profile
+      index:
+        users: Users
+        show: Show
+        user_destroy: Are you sure?
+        new_user: New user
+      show:
+        crypted_password: Crypted password
+        salt: Salt
+        back: Back

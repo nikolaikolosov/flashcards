@@ -1,17 +1,24 @@
 Rails.application.routes.draw do
-  resources :users
-  resources :user_sessions, only: [:new, :create, :destroy]
-  get 'login' => 'user_sessions#new', as: :login
-  post 'logout' => 'user_sessions#destroy', as: :logout
+  root 'dashboard/pages#index'
+  put 'check_card' => 'dashboard/pages#check_card', as: 'check_card'
+  get 'registration', to: 'users#new'
+  get 'login', to: 'home/user_sessions#new'
+  post 'login', to: 'home/user_sessions#create'
+  post 'logout', to: 'home/user_sessions#destroy'
 
-  root 'pages#index'
-  resources :packs do
-    member do
-      put 'set_as_current'
-      put 'reset_as_current'
+  scope module: 'dashboard' do
+    resources :cards
+    resources :packs do
+      member do
+        put 'set_as_current'
+        put 'reset_as_current'
+      end
     end
   end
 
-  resources :cards
-  put 'check_card' => 'pages#check_card', as: 'check_card'
+  scope module: 'home' do
+    resources :users
+    resources :user_sessions, only: [:new, :create, :destroy]
+  end
 end
+
