@@ -1,7 +1,7 @@
 <% flash.each do |name, msg| -%>
     <%= content_tag :div, msg, class: name %>
 <% end -%>
-<br>
+<br />
 <% if @card %>
   <b><%= t('shared.german_word') %></b><br />
   <%= card.original_text %>
