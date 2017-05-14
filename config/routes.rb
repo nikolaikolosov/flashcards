@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       put 'reset_as_current'
     end
   end
+
   resources :cards
-  put 'check_card' => 'pages#check_card'
+  put 'check_card' => 'pages#check_card', as: 'check_card'
 end

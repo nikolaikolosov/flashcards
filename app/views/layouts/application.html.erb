@@ -29,9 +29,9 @@
               <% end %>
             </ul>
         </nav>
-        <% flash.each do |name, msg| -%>
-          <%= content_tag :div, msg, class: name %>
-        <% end -%>
+          <% flash.each do |name, msg| -%>
+            <%= content_tag :div, msg, class: name %>
+          <% end -%>
       </header>
       <%= yield %>
     </div>
