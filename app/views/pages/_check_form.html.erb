@@ -1,18 +1,23 @@
 <% flash.each do |name, msg| -%>
-  <%= content_tag :div, msg, class: name %>
+    <%= content_tag :div, msg, class: name %>
 <% end -%>
-<b><%= t('shared.german_word') %></b><br />
-<%= card.original_text %>
-<% if card.image? %>
-      <%= image_tag card.image_url %>
-<% end %>
-<%= form_tag check_card_path(card_id: card.id), method: :put, remote: true do %>
-  <div class="form-group">
-    <%= label_tag '', t('.enter_translation') %>
-    <%= text_area_tag :answer, nil, class: 'form-control',
-                      required: true, autofocus: true %>
-    <%= hidden_field_tag 'time', params[:time], value: 0 %>
-  </div>
+<br />
+<% if @card %>
+  <b><%= t('shared.german_word') %></b><br />
+  <%= card.original_text %>
+  <% if card.image? %>
+        <%= image_tag card.image_url %>
+  <% end %>
+  <%= form_tag check_card_path(card_id: card.id), method: :put, remote: true do %>
+    <div class="form-group">
+      <%= label_tag '', t('.enter_translation') %>
+      <%= text_area_tag :answer, nil, class: 'form-control',
+                        required: true, autofocus: true %>
+      <%= hidden_field_tag 'time', params[:time], value: 0 %>
+    </div>
 
-  <%= submit_tag t('.check'), class: 'btn btn-default' %>
+    <%= submit_tag t('.check'), class: 'btn btn-default' %>
+  <% end %>
+<% else %>
+    <%= t('pages.index.no_cards') %>
 <% end %>

@@ -4,13 +4,7 @@
 </p>
 <% if current_user %>
     <div id="card_and_check">
-      <% if @card %>
           <%= render 'check_form', card: @card %>
-      <% else %>
-        <p>
-          <%= t('.no_cards') %>
-        
-      <% end %>
     </div>
 <% else %>
   <%= t('.sign_in') %>
