@@ -1,4 +1,4 @@
-class PagesController < ApplicationController
+class Dashboard::PagesController < ApplicationController
   before_action :check_user
 
   def index
